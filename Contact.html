@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE4</title>
+    <style>
+       * {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: black;
+  padding: 15px;
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+.navlk {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: black;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navlk.active {
+        display: flex; /* Show the menu when active */
+      }
+
+      .navlk li {
+        width: 100%;
+        padding: 15px 20px;
+        color: white;
+      }
+
+      .nav-lk a {
+        width: 100%;
+        margin: 10px 0;
+        color: #fff;
+        line-height: 4em;
+        font-size: 1.1em;
+        font-weight: bolder;
+        /* text-decoration: none; */
+      }
+
+      .nav-lk a:hover {
+        color: #ffcc00; /* Optional hover effect */
+      }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .navdiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+}
+
+
+      .heading {
+  color: white;
+  background-image: url("./assets/Homepage-banner.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0px 50px;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: justify;
+}
+
+.heading h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 3;
+}
+
+.heading p {
+  font-size: 30px;
+  font-weight: lighter;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.click2 button {
+  background-color: green;
+  color: white;
+  font-size: 26px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .heading {
+    padding: 20px;
+    align-items:self-start ;
+    text-align: justify;
+  }
+
+  .heading h1 {
+    font-size: 36px;
+    line-height: 2;
+  }
+
+  .heading p {
+    font-size: 23px;
+    line-height: 1.6;
+  }
+
+  .Buttons {
+    align-items: center;
+  }
+
+  .click2 button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    padding: 20px;
+    align-items:self-start ;
+    text-align: justify;
+  }
+
+  .heading h1 {
+    font-size: 36px;
+    line-height: 2;
+  }
+
+  .heading p {
+    font-size: 23px;
+    line-height: 1.6;
+  }
+
+  .Buttons {
+    align-items: center;
+  }
+
+  .click2 button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading h1 {
+    font-size: 28px;
+    line-height: 1.8;
+  }
+
+  .heading p {
+    font-size: 23px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .click2 button {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+}.partners-section {
+  text-align: center;
+  background-image: url("./assets/home-brand-values.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  padding: 30px;
+}
+
+.partners-section h2 {
+  font-size: 70px;
+  color: white;
+  text-align: left;
+  line-height: 150px;
+}
+
+.partners-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(145deg, #00ff00, #00aa00);
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+}
+
+.partners-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partners-row img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.circle-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .partners-section {
+    padding: 20px;
+    background-size: cover;
+  }
+  .partners-section h2 {
+    font-size: 50px;
+    line-height: 120px;
+  }
+
+  .partners-container {
+    grid-template-columns: 1fr 2fr;
+    margin-top: 100px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9em;
+  }
+
+  .partners-row img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .category {
+    margin: 20px 0;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 0.8em;
+  }
+
+  .partners-row img,
+  .circle-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+
+  .partners-section h2 {
+    font-size: 40px;
+    line-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    padding: 20px;
+  }
+
+  .partners-section h2 {
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+  }
+
+  .partners-container {
+    margin-top: 50px;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    font-size: 0.5em;
+  }
+
+  .partners-row img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.page3 {
+        background-image: url("./assets/gwyfcgwui (1).svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: black;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .page3 h1 {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 50px;
+      }
+
+      .rectangle,
+      .rectangle-large {
+        width: 90vw;
+        max-width: 345px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+        color: white;
+        font-size: 1em;
+        text-align: center;
+        position: relative;
+        margin: 20px auto;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      .rectangle-large {
+        max-width: 400px;
+        background-color: rgba(74, 111, 74, 0.6);
+        transform: scale(1.05);
+        z-index: 1;
+      }
+
+      @keyframes bounce {
+        100%,
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .rectangle img {
+        width: 80%;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+
+      .text {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .navdiv {
+          gap: 20px;
+        }
+
+        .nav-links li a {
+          font-size: 18px;
+        }
+
+        .heading {
+          padding: 80px 30px;
+        }
+
+        .heading h1 {
+          font-size: 2em;
+        }
+
+        .click2 button {
+          font-size: 14px;
+          padding: 6px 12px;
+        }
+
+        .page3 h1 {
+          font-size: 2.5em;
+        }
+
+        .rectangle,
+        .rectangle-large {
+          max-width: 350px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navdiv {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+
+        .nav-links {
+          gap: 20px;
+        }
+
+        .heading {
+          padding: 60px 20px;
+          text-align: center;
+          align-items: center;
+        }
+
+        .heading h1 {
+          font-size: 1.8em;
+        }
+
+        .Buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .click2 button {
+          font-size: 13px;
+          padding: 5px 10px;
+          width: 100%;
+        }
+
+        .rectangle,
+        .rectangle-large {
+          width: 80vw;
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .nav-links li a {
+          font-size: 16px;
+        }
+
+        .heading {
+          padding: 40px 10px;
+        }
+
+        .heading h1 {
+          font-size: 1.5em;
+        }
+
+        .rectangle,
+        .rectangle-large {
+          width: 90vw;
+          max-width: 280px;
+        }
+
+        .click2 button {
+          font-size: 12px;
+          padding: 4px 8px;
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .page3 {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .page3 h1 {
+          grid-column: 1 / 4;
+          font-size: 5em;
+        }
+
+        .rectangle,
+        .rectangle-large {
+          align-self: center;
+          
+        }
+
+        .rectangle-large {
+          align-self: start;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .page3 h1 {
+          font-size: 4em;
+        }
+
+        .rectangle {
+          max-width: 345px;
+        }
+
+        .rectangle-large {
+          max-width: 400px;
+        }
+      }
+
+.awards-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-image: url("./assets/Contact page (1).png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.awards-section h2 {
+  font-size: 70px;
+  color: white;
+  text-align: center; /* Center text for better alignment on smaller screens */
+  width: 100%;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 50px; /* Reduce margin for smaller screens */
+}
+
+.award-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 15px; 
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.award-card:hover {
+  transform: scale(1.05);
+}
+
+.award-card img {
+  width: 60px; 
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.award-title {
+  font-size: 0.9em; 
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .awards-section {
+    padding: 40px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align content */
+  }
+
+  .awards-section h2 {
+    font-size: 50px;
+  }
+
+  .awards-grid {
+    display: flex; /* Use flex layout */
+    flex-wrap: wrap; /* Allow wrapping to fit multiple rows */
+    justify-content: center; /* Center-align the rows */
+    gap: 20px;
+  }
+
+  .award-card {
+    flex: 0 0 calc(50% - 20px); /* Take up 50% of the width, minus the gap */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .award-card img {
+    width: 60px; /* Reduce image size */
+    height: 60px;
+  }
+
+  .award-title {
+    font-size: 0.9em; /* Adjust font size */
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .awards-section h2 {
+        font-size: 2em;
+        text-align: center;
+      }
+
+      .award-card {
+        padding: 15px;
+      }
+
+      .award-card img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .award-title {
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .awards-section h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      .award-card {
+        padding: 10px;
+      }
+
+      .award-card img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .award-title {
+        font-size: 0.85em;
+      }
+    }
+    
+footer {
+        background-image: linear-gradient(
+          to bottom,
+          #5f8911 0%,
+          black 15%,
+          black 100%
+        );
+        color: #fff;
+        padding: 40px 0;
+        font-size: 13px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .row {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .col {
+        flex-basis: 100%;
+        padding: 10px;
+      }
+
+      .col p {
+        margin: 5px 0;
+      }
+
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-links {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      @media (min-width: 768px) {
+        .col {
+          flex-basis: 45%;
+          text-align: left;
+        }
+
+        .social-icons {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (min-width: 1024px){
+        .col {
+          flex-basis: 22%;
+        }
+
+        footer {
+          padding: 60px 0;
+        }
+
+        .footer-links {
+          font-size: 15px;
+        }
+    }
+    .stats-section {
+      background-image: url("./assets/gwyfcgwui (1).svg"); /* Background image */
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: black;
+      padding: 50px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stats-section h2 {
+      font-size: 70px;
+      color: white;
+      text-align: left;
+      width: 100%;
+      left: 10px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin-top: 40px;
+      width: 100%;
+      margin-top: 150px;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, #1e6f5c, #114b4e);
+      border-radius: 50%;
+      color: #ffffff;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+      margin: auto;
+      text-align: center;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+    }
+
+    .stat-card h3 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .stat-card p {
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-section h2 {
+        font-size: 2em;
+        text-align: center;
+        padding-left: 0;
+      }
+
+      .stat-card {
+        width: 120px;
+        height: 120px;
+      }
+
+      .stat-card h3 {
+        font-size: 1.6em;
+      }
+
+      .stat-card p {
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-section h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      .stat-card {
+        width: 100px;
+        height: 100px;
+      }
+
+      .stat-card h3 {
+        font-size: 1.4em;
+      }
+
+      .stat-card p {
+        font-size: 0.7em;
+      }
+    }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navdiv">
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/About.html">About Us</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="#">
+          <img
+            src="./assets/Logo transparent-01 1.svg"
+            alt="Growthawk Logo"
+          />
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/Work.html">Work</a></li>
+        <li><a href="/Contact.html">Contact</a></li>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleNavlk()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="38px"
+              viewBox="0 -960 960 960"
+              width="28px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navlk">
+        <img src="./assets/Logo transparent-01 1.svg" alt="Growthawk Logo" />
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./About.html">About Us</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Contact.html">Contact</a></li>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleNavlk()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    function toggleNavlk() {
+      const navlk = document.querySelector(".navlk");
+      if (navlk) {
+        navlk.classList.toggle("active");
+      } else {
+        console.error("Navigation menu element not found.");
+      }
+    }
+  </script>
+
+  
+      <header class="heading">
+        <h1>How we Work</h1>
+        <p>
+          Our story began with a simple belief: ambition should never be held back. We were born from the shared experiences of entrepreneurs, by entrepreneurs. We've walked the path of building a business from the ground up, experiencing firsthand the thrill of highs and the daunting lows. We understand .. the burning desire to grow, to innovate, to leave a mark on the world. This journey fueled our passion to help others achieve their own business aspirations. We recognized a need for a different kinghof consultancy, one that goes beyond advice and dives into the trenches alongside you. We wanted to create a partnership built on trust, collaboration, and a shared commitment to success. That's why we offer more than just strategies and solutions. We provide support, expert guidance, and the practical tools you need to
+        </p>
+        
+        </p>
+        <div class="Buttons">
+          <div class="click2">
+            <button>Contact Us</button>
+          </div>
+        </div>
+      </header>
+      <section class="partners-section">
+        <h2>Our Partners</h2>
+        <div class="partners-container">
+          <div class="category technology">
+            <div class="circle">Technology</div>
+          </div>
+          
+          <div class="partners-row">
+            <img src="./assets/image 10.png" alt="Partner Logo 1">
+            <img src="./assets/image 11.png" alt="Partner Logo 2">
+            <img src="./assets/image 12.png" alt="Partner Logo 3">
+          </div>
+    
+          <div class="category integration">
+            <div class="circle">Integration</div>
+          </div>
+    
+          <div class="placeholder-row">
+            <div class="circle-placeholder"></div>
+            <div class="circle-placeholder"></div>
+            <div class="circle-placeholder"></div>
+          </div>
+    
+          <div class="category outsourcing">
+            <div class="circle">Outsourcing</div>
+          </div>
+        </div>
+        
+      </section>
+      <div class="page3">
+        <h1>Our Services</h1>
+        <div class="rectangle">
+         <img src="./assets/image 15.png" alt="image">
+          <div class="text">Informantion technology service</div>
+        </div>
+        <div class="rectangle rectangle-large">
+            <img src="./assets/image 15.png" alt="image">
+          <div class="text">Information Security Management</div>
+        </div>
+        <div class="rectangle">
+            <img src="./assets/image 15.png" alt="image">
+
+          <div class="text">Capability Maturity model</div>
+        </div>
+      </div>
+      <section class="awards-section">
+        <h2>Awards</h2>
+        <div class="awards-grid">
+          <div class="award-card">
+            <img src="./assets/award-1.png" alt="Red Herring Award"> <!-- Replace with your image path -->
+            <p class="award-title">RED HERRING AWARDS</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-2.png" alt="Software Excellence Award">
+            <p class="award-title">THE EUROPEAN IT & SOFTWARE EXCELLENCE AWARDS</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-3.png" alt="TiE50 Award">
+            <p class="award-title">TIE50 AWARDS</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-4.png" alt="SIIA Codie Award">
+            <p class="award-title">SIIA CODIE AWARDS</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-5.png" alt="Big Innovation Award">
+            <p class="award-title">THE BIG INNOVATION AWARDS</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-6.png" alt="Brandon Hall Award">
+            <p class="award-title">THE BRANDON HALL GROUP EXCELLENCE IN TECHNOLOGY</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-7.png" alt="IBM Beacon Award">
+            <p class="award-title">IBM BEACON AWARD</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-8.png" alt="Frost and Sullivan Award">
+            <p class="award-title">FROST AND SULLIVAN AWARD</p>
+          </div>
+          <div class="award-card">
+            <img src="./assets/award-9.png" alt="Gartner Award">
+            <p class="award-title">GARTNER</p>
+          </div>
+        </div>
+      </section>
+      <section class="stats-section">
+        <h2>Company Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>22+</h3>
+            <p>Companies released IPO (Went Public)</p>
+          </div>
+          <div class="stat-card">
+            <h3>$500+</h3>
+            <p>Million Saved</p>
+          </div>
+          <div class="stat-card">
+            <h3>$650+</h3>
+            <p>Million revenue generated</p>
+          </div>
+          <div class="stat-card">
+            <h3>100+</h3>
+            <p>Clients doubled their revenue in less than 3 years</p>
+          </div>
+          <div class="stat-card">
+            <h3>400+</h3>
+            <p>Engineers</p>
+          </div>
+          <div class="stat-card">
+            <h3>16</h3>
+            <p>Offices</p>
+          </div>
+          <div class="stat-card">
+            <h3>08</h3>
+            <p>Reselling Gold partners</p>
+          </div>
+          <div class="stat-card">
+            <h3>04</h3>
+            <p>International Certifications</p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="row">
+          <div class="col">
+            <img
+              src="./assets/Logo transparent-01 1.svg"
+              class="logo"
+              alt="Growthawk Logo"
+            />
+          </div>
+          <div class="col">
+            <p>About Us</p>
+            <p>Custom Software</p>
+            <p>Mobile</p>
+            <p>Ready to use Apps</p>
+          </div>
+          <div class="col">
+            <p>Useful Links</p>
+            <p>GDPR Compliance</p>
+            <p>Data Security</p>
+            <p>Terms and Conditions</p>
+            <p>Refund</p>
+            <p>Cancellation</p>
+            <p>Blogs</p>
+            <p>Anti Spam</p>
+            <p>Legal</p>
+            <p>Policy</p>
+          </div>
+          <div class="col">
+            <p>Support</p>
+            <p style="cursor: pointer">Contact Us</p>
+          </div>
+        </div>
+  
+        <hr
+          style="
+            border: none;
+            height: 2px;
+            background-color: #333;
+            width: 90%;
+            margin: 20px auto;
+          "
+        />
+  
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img src="./assets/instagram.png" alt="Instagram"
+          /></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><img src="./assets/twitter (1).png" alt="Twitter"
+          /></a>
+          <a href="https://www.facebook.com" target="_blank"
+            ><img src="./assets/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.linkedin.com" target="_blank"
+            ><img src="./assets/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+  
+        <div class="footer-links">
+          <a href="#terms">Terms of Service</a> –
+          <a href="#privacy">Privacy Policy</a>
+        </div>
+  
+        <div class="copyright">&copy; 2024 Growthawk. All Rights Reserved.</div>
+      </footer>
+</body>
+</html>

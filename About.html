@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGE2</title>
+    <style>
+      * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        background: black;
+        padding: 15px;
+      }
+
+      .navdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links li a {
+        color: white;
+        font-size: clamp(16px, 2vw, 22px); /* Responsive font size */
+        font-weight: bold;
+      }
+      .navlk {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: black;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navlk.active {
+        display: flex; /* Show the menu when active */
+      }
+
+      .navlk li {
+        width: 100%;
+        padding: 15px 20px;
+        /* color: white; */
+      }
+
+      .nav-lk a {
+        width: 100%;
+        margin: 10px 0;
+        color: #fff;
+        line-height: 4em;
+        font-size: 1.1em;
+        font-weight: bolder;
+        /* text-decoration: none; */
+      }
+
+      .nav-lk a:hover {
+        color: #ffcc00; /* Optional hover effect */
+      }
+
+      .heading {
+        color: white;
+        background-image: url("./assets/Homepage-banner.png");
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+      }
+
+      .heading h1 {
+        font-size: clamp(28px, 5vw, 60px); /* Responsive font size */
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      .heading p {
+        font-size: clamp(16px, 2vw, 25px); /* Responsive font size */
+        font-weight: lighter;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .Buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .click2 button {
+        background-color: green;
+        color: white;
+        font-size: clamp(16px, 2.5vw, 26px);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Screen size: 1024px and below */
+      @media (max-width: 1024px) {
+        .nav-links {
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .heading {
+          padding: 30px;
+          text-align: left;
+        }
+
+        .heading h1 {
+          line-height: 1.4;
+        }
+
+        .heading p {
+          font-size: 22px;
+          line-height: 1.6;
+          text-align: justify;
+        }
+
+        .Buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .click2 button {
+          font-size: 20px;
+          padding: 10px 20px;
+        }
+      }
+
+      /* Screen size: 900px and below */
+      @media (max-width: 900px) {
+        .navdiv {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .heading {
+          align-items: center;
+          text-align: center;
+        }
+
+        .heading h1 {
+          font-size: 40px;
+        }
+
+        .heading p {
+          font-size: 20px;
+          line-height: 1.6;
+        }
+
+        .Buttons {
+          justify-content: center;
+        }
+
+        .click2 button {
+          font-size: 18px;
+          padding: 8px 16px;
+        }
+      }
+
+      /* Screen size: 700px and below */
+      @media (max-width: 700px) {
+        .navdiv {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links {
+          gap: 15px;
+          align-items: center;
+        }
+
+        .heading {
+          padding: 20px;
+        }
+
+        .heading h1 {
+          font-size: 36px;
+        }
+
+        .heading p {
+          font-size: 18px;
+        }
+
+        .click2 button {
+          font-size: 16px;
+          padding: 8px 12px;
+        }
+      }
+
+      /* Screen size: 400px and below */
+      @media (max-width: 400px) {
+        .navdiv {
+          gap: 15px;
+        }
+
+        .nav-links li a {
+          font-size: 14px;
+        }
+
+        .heading {
+          padding: 15px;
+        }
+
+        .heading h1 {
+          font-size: 28px;
+        }
+
+        .heading p {
+          font-size: 14px;
+        }
+
+        .click2 button {
+          font-size: 14px;
+          padding: 6px 10px;
+        }
+      }
+
+      /* Screen size: 300px and below */
+      @media (max-width: 300px) {
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .heading {
+          padding: 10px;
+        }
+
+        .heading h1 {
+          font-size: 22px;
+          line-height: 1.3;
+        }
+
+        .heading p {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .click2 button {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+      }
+
+      .container {
+        max-width: 2000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+        position: relative;
+        background: url("./assets/About-us-page.png") no-repeat center;
+        background-size: cover;
+        height: 950px;
+      }
+
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150%;
+        height: 100%;
+        transform: translateX(-50%);
+        opacity: 0.2;
+        z-index: -1;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        padding: 20px;
+      }
+
+      .icon {
+        width: 150px;
+        height: 150px;
+        background-color: #4bb543;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: white;
+      }
+
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .description {
+        font-size: 30px;
+        line-height: 1.5;
+        opacity: 0.9;
+        color: white;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .section {
+          text-align: left;
+        }
+
+        .title {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 1.5em;
+        }
+
+        .description {
+          font-size: 1em;
+        }
+      }
+      .personality-section {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 0px 20px;
+        min-height: 100vh;
+      }
+
+      .personality-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 170px;
+      }
+
+      .card {
+        background-color: rgba(194, 184, 184, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: left;
+        max-width: 300px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .card p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .card-footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 0 0 20px 20px;
+        font-weight: bold;
+      }
+
+      .card.highlighted {
+        background-color: rgba(74, 111, 74, 0.6);
+        transform: scale(1.05);
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      @media (min-width: 768px) {
+        .personality-section h1 {
+          font-size: 3rem;
+          text-align: left;
+        }
+
+        .cards-container {
+          gap: 30px;
+        }
+
+        .card {
+          max-width: 350px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .personality-section h1 {
+          font-size: 3.5rem;
+        }
+
+        .cards-container {
+          justify-content: space-between;
+        }
+
+        .card {
+          max-width: 400px;
+        }
+      }
+
+      .brand-pillars {
+        width: 100%;
+        min-height: 100vh;
+        background-image: url("./assets/Contact page (1).png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-pillars h1 {
+        font-size: 4rem;
+        margin-bottom: 40px;
+        text-align: left;
+        padding: 20px 20px;
+      }
+
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+      }
+
+      .pillar-card {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .pillar-card:hover {
+        transform: scale(1.05);
+      }
+
+      .pillar-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: black;
+      }
+
+      .pillar-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: black;
+      }
+
+      .pillar-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 15px;
+      }
+
+      /* Media Queries */
+      @media (max-width: 1200px) {
+        .brand-pillars h1 {
+          font-size: 2.2rem;
+          padding: 20px 10px;
+        }
+
+        .pillars-grid {
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .brand-pillars h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .pillars-grid {
+          gap: 10px;
+          margin: auto;
+        }
+
+        .pillar-card {
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .brand-pillars h1 {
+          font-size: 1.8rem;
+          text-align: center;
+        }
+
+        .pillars-grid {
+          gap: 10px;
+        }
+
+        .pillar-card {
+          padding: 10px;
+        }
+
+        .pillar-card h2 {
+          font-size: 1.2rem;
+        }
+
+        .pillar-card p {
+          font-size: 0.9rem;
+        }
+      }
+
+      .personal-story {
+        max-width: 1900px;
+        text-align: left;
+        line-height: 1.8;
+        background-color: black;
+        padding: 0px 20px;
+        min-height: 100vh;
+        background-image: url("./assets/gwyfcgwui (1).svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .personal-story h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-align: left;
+      }
+
+      .personal-story p {
+        font-size: 1.5rem;
+        color: #cccccc;
+        margin-bottom: 20px;
+        padding-left: 50px;
+        text-align: justify;
+      }
+
+      .personal-story em {
+        color: #a4f0c1;
+        font-weight: 500;
+      }
+
+      .personal-story strong {
+        color: #a4f0c1;
+        font-weight: bold;
+      }
+
+      @media (max-width: 1024px) {
+        .personal-story {
+          padding: 0px 15px;
+          /* background-size: cover; */
+        }
+
+        .personal-story h1 {
+          font-size: 2.5rem;
+        }
+
+        .personal-story p {
+          font-size: 20px;
+          padding-left: 30px;
+          text-align: justify;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .personal-story {
+          padding: 20px 15px;
+          text-align: center;
+        }
+
+        .personal-story h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .personal-story p {
+          font-size: 1rem;
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .personal-story {
+          padding: 15px 10px;
+        }
+
+        .personal-story h1 {
+          font-size: 1.8rem;
+        }
+
+        .personal-story p {
+          font-size: 0.9rem;
+          text-align: justify;
+        }
+      }
+
+      footer {
+        background-image: linear-gradient(
+          to bottom,
+          #5f8911 0%,
+          black 15%,
+          black 100%
+        );
+        color: #fff;
+        padding: 40px 0;
+        font-size: 13px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .row {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .col {
+        flex-basis: 100%;
+        padding: 10px;
+      }
+
+      .col p {
+        margin: 5px 0;
+      }
+
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-links {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      @media (min-width: 768px) {
+        .col {
+          flex-basis: 45%;
+          text-align: left;
+        }
+
+        .social-icons {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .col {
+          flex-basis: 22%;
+        }
+
+        footer {
+          padding: 60px 0;
+        }
+
+        .footer-links {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/About.html">About Us</a></li>
+        </ul>
+
+        <div class="logo">
+          <a href="#">
+            <img
+              src="./assets/Logo transparent-01 1.svg"
+              alt="Growthawk Logo"
+            />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="/Work.html">Work</a></li>
+          <li><a href="/Contact.html">Contact</a></li>
+          <li>
+            <a href="javascript:void(0)" onclick="toggleNavlk()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="38px"
+                viewBox="0 -960 960 960"
+                width="28px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="navlk">
+          <img src="./assets/Logo transparent-01 1.svg" alt="Growthawk Logo" />
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./About.html">About Us</a></li>
+          <li><a href="./Work.html">Work</a></li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li>
+            <a href="javascript:void(0)" onclick="toggleNavlk()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+      function toggleNavlk() {
+        const navlk = document.querySelector(".navlk");
+        if (navlk) {
+          navlk.classList.toggle("active");
+        } else {
+          console.error("Navigation menu element not found.");
+        }
+      }
+    </script>
+
+    <header class="heading">
+      <h1>Our Story</h1>
+      <p>
+        Our story began with a simple belief: ambition should never be held
+        back. We were born from the shared experiences of entrepreneurs, by
+        entrepreneurs.We've walked the path of building a business from the
+        ground up, experiencing firsthand the thrill of highs and the daunting
+        lows. We understand the burning desire to grow, to innovate, to leave a
+        mark on the world.
+      </p>
+      <p>
+        This journey fueled our passion to help others achieve their own
+        business aspirations. We recognized a need for a different kind of
+        consultancy, one that goes beyond advice and dives into the trenches
+        alongside you. We wanted to create partnership built on trust,
+        collaboration, and a shared commitment to success.
+      </p>
+      <p>
+        We empower you to make informed decisions, streamline your operations,
+        and unlock your business's full potential. Our team is a collective of
+        visionaries. We're always looking ahead, anticipating trends, and
+        pushing boundaries to drive innovation.
+      </p>
+      <div class="Buttons">
+        <div class="click2">
+          <button>Contact Us</button>
+        </div>
+      </div>
+    </header>
+    <section class="personality-section">
+      <h1>Our Personality</h1>
+      <div class="cards-container">
+        <div class="card">
+          <p>
+            We see the world not as it is, but as it could be. We have a knack
+            for spotting opportunities where others see obstacles. We're not
+            satisfied with the status quo; we're always looking ahead,
+            anticipating trends, and envisioning a brighter future for your
+            business. If you dare to dream big, we'll help you turn those dreams
+            into reality.
+          </p>
+          <div class="card-footer">We are Visionaries</div>
+        </div>
+        <div class="card highlighted">
+          <p>
+            We're not afraid to forge our own path, to challenge the status quo,
+            and to push the boundaries of what's possible. We thrive on
+            innovation and embrace change as an opportunity for growth. We're
+            always looking for new ways to help our clients achieve their goals,
+            even if it means venturing into uncharted territory. We believe that
+            true success comes from taking risks and daring to be different.
+          </p>
+          <div class="card-footer">We are Trailblazers</div>
+        </div>
+        <div class="card">
+          <p>
+            We protect your business like it's our own. We understand the blood,
+            sweat, and tears you've poured into building it, and we're committed
+            to safeguarding your investment. We're meticulous, thorough, and
+            always vigilant. We anticipate risks, navigate regulations, and
+            ensure your business is built on a solid foundation.
+          </p>
+          <div class="card-footer">We are Guardians</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-pillars">
+      <h1>Brand Pillars</h1>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h2>Innovation & Customization</h2>
+          <p>
+            We prioritize innovation and tailor-made solutions that align with
+            the unique needs of each business...
+          </p>
+          <img src="path/to/image1.jpg" alt="Innovation & Customization" />
+        </div>
+        <div class="pillar-card">
+          <h2>Expert Consultation & Strategic Guidance</h2>
+          <p>
+            We are more than just a software provider—we’re your strategic ERP
+            partner, with years of industry expertise...
+          </p>
+          <img src="path/to/image2.jpg" alt="Expert Consultation" />
+        </div>
+        <div class="pillar-card">
+          <h2>Efficiency & Operational Excellence</h2>
+          <p>
+            We are committed to helping businesses streamline their operations,
+            reduce inefficiencies, and improve productivity...
+          </p>
+          <img
+            src="path/to/image3.jpg"
+            alt="Efficiency & Operational Excellence"
+          />
+        </div>
+        <div class="pillar-card">
+          <h2>Ready Solutions</h2>
+          <p>
+            Our future business solutions keep you ahead of the curve, helping
+            you adapt to new challenges and ensure your business...
+          </p>
+          <img src="path/to/image4.jpg" alt="Ready Solutions" />
+        </div>
+        <div class="pillar-card">
+          <h2>Trust & Long-Term Partnerships</h2>
+          <p>
+            We build long-lasting partnerships based on trust, transparency, and
+            shared success. Our goal is to be your long-term ERP partner...
+          </p>
+          <img src="path/to/image5.jpg" alt="Trust & Long-Term Partnerships" />
+        </div>
+        <div class="pillar-card">
+          <h2>Client-Centric Approach</h2>
+          <p>
+            Your success is our success. We believe in a client-first approach,
+            offering personalized service and continuous support...
+          </p>
+          <img src="path/to/image6.jpg" alt="Client-Centric Approach" />
+        </div>
+      </div>
+    </section>
+    <section class="personal-story">
+      <h1>Personal Story</h1>
+      <p>
+        I remember the day I decided to start this company. I was overlooking
+        the streets of Mumbai, a city that never sleeps, a city that dreams big.
+        I had spent years working in the corporate world, climbing the ladder,
+        achieving success on paper. But deep down, I knew there was something
+        missing. I also witnessed firsthand the struggles many businesses
+        face—the uncertainty, the isolation, the feeling of being overwhelmed by
+        the complexity of it all. I saw brilliant ideas wither away due to a
+        lack of guidance, and promising ventures trip without a clear path
+        forward. That’s when I knew my calling was to help others navigate these
+        treacherous waters.
+      </p>
+      <p>
+        I wanted to be the guiding hand, the trusted advisor, the voice of
+        reason that entrepreneurs could rely on. So, I took my years of
+        experience, my business sense, and my belief in human potential, and
+        founded this consultancy. I’ve always been a visionary, constantly
+        looking for new ways to push boundaries and challenge the status quo.
+        <em
+          >I’m an optimist, always believing that there’s a solution to every
+          problem, a way to turn setbacks into opportunities.</em
+        >
+        I’ve built this company on the foundation of my own entrepreneurial
+        journey, filling it with the lessons I’ve learned, the mistakes I’ve
+        made, and the triumphs I’ve celebrated. I’m passionate about sharing my
+        knowledge and expertise, empowering others to achieve their wildest
+        dreams. This is more than just a business to me; it’s a calling. It’s my
+        way of paying forward the <strong>lessons I’ve learned</strong> and
+        <strong>helping others</strong> achieve the success they deserve.
+      </p>
+    </section>
+    <footer>
+      <div class="row">
+        <div class="col">
+          <img
+            src="./assets/Logo transparent-01 1.svg"
+            class="logo"
+            alt="Growthawk Logo"
+          />
+        </div>
+        <div class="col">
+          <p>About Us</p>
+          <p>Custom Software</p>
+          <p>Mobile</p>
+          <p>Ready to use Apps</p>
+        </div>
+        <div class="col">
+          <p>Useful Links</p>
+          <p>GDPR Compliance</p>
+          <p>Data Security</p>
+          <p>Terms and Conditions</p>
+          <p>Refund</p>
+          <p>Cancellation</p>
+          <p>Blogs</p>
+          <p>Anti Spam</p>
+          <p>Legal</p>
+          <p>Policy</p>
+        </div>
+        <div class="col">
+          <p>Support</p>
+          <p style="cursor: pointer">Contact Us</p>
+        </div>
+      </div>
+
+      <hr
+        style="
+          border: none;
+          height: 2px;
+          background-color: #333;
+          width: 90%;
+          margin: 20px auto;
+        "
+      />
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank"
+          ><img src="./assets/instagram.png" alt="Instagram"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img src="./assets/twitter (1).png" alt="Twitter"
+        /></a>
+        <a href="https://www.facebook.com" target="_blank"
+          ><img src="./assets/facebook.png" alt="Facebook"
+        /></a>
+        <a href="https://www.linkedin.com" target="_blank"
+          ><img src="./assets/linkedin.png" alt="LinkedIn"
+        /></a>
+      </div>
+
+      <div class="footer-links">
+        <a href="#terms">Terms of Service</a> –
+        <a href="#privacy">Privacy Policy</a>
+      </div>
+
+      <div class="copyright">&copy; 2024 Growthawk. All Rights Reserved.</div>
+    </footer>
+  </body>
+</html>
